@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import moment from 'moment';
 
 // COMPONENTS
+import Cells from './Cells';
 import Header from './Header';
 import Weekdays from './Weekdays';
 
@@ -19,7 +20,8 @@ const Calendar = () => {
   return (
     <div className='calendar'>
       <Header currentDate={currentDate} handleCurrentDate={setCurrentDate} />
-      <Weekdays />
+      <Weekdays currentDate={currentDate} />
+      <Cells currentDate={currentDate} handleSelectedDate={setSelectedDate} />
     </div>
   );
 };

@@ -12,7 +12,7 @@ import moment from 'moment';
 const Weekdays = ({ currentDate }) => {
   const dayFormat = 'ddd';
   const days = [];
-  let startDate = moment(currentDate).startOf('week');
+  const startDate = moment(currentDate).startOf('week');
 
   for (let i = 0; i < 7; i++) {
     days.push(
