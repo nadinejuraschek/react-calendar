@@ -36,7 +36,7 @@ const Cells = ({ currentDate, handleSelectedDate }) => {
         ? "disabled" : moment(day).isSame(day, 'month')
         ? "selected" : "" }`}
         key={day}
-        onClick={() => onDateClick(moment(day))}
+        onClick={() => onDateClick(moment(cloneDay))}
         >
         <span className="number">{formattedDate}</span>
         <span className="bg">{formattedDate}</span>
