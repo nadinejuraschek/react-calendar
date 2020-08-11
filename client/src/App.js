@@ -1,7 +1,7 @@
 import React from 'react';
 
 // COMPONENTS
-import Calendar from 'components/Calendar';
+import Calendar from './components/Calendar';
 
 const App = () => {
   return (
