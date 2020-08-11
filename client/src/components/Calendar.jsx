@@ -6,6 +6,7 @@ import moment from 'moment';
 
 // COMPONENTS
 import Header from './Header';
+import Weekdays from './Weekdays';
 
 const Calendar = () => {
   const [ currentDate, setCurrentDate ] = useState(new Date());
@@ -18,8 +19,7 @@ const Calendar = () => {
   return (
     <div className='calendar'>
       <Header currentDate={currentDate} handleCurrentDate={setCurrentDate} />
-      {/* <div>{daysOfWeek()}</div>
-      <div>{cells()}</div> */}
+      <Weekdays />
     </div>
   );
 };

@@ -1,5 +1,5 @@
 // REACT
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 // NPM PACKAGES
 import moment from 'moment';
@@ -13,13 +13,10 @@ import next from '../assets/chevron-right.svg';
 
 const Header = ({ handleCurrentDate, currentDate }) => {
   const monthFormat = "MMMM YYYY";
-  const [ displayMonth, setDisplayMonth ] = useState('');
+  const displayMonth = moment(currentDate).format(monthFormat);
 
-  useEffect(() => {
-    setDisplayMonth(moment(currentDate).format(monthFormat));
-    // TEST
-    // console.log(displayMonth);
-  }, [currentDate]);
+  // TEST
+  // console.log(displayMonth);
 
   const prevMonth = () => {
     const pastDate = moment(currentDate).subtract(1, 'months');
