@@ -4,9 +4,12 @@ import React from 'react';
 // NPM PACKAGES
 import moment from 'moment';
 
+// STYLES
+import styles from './calendar.module.css';
+
 // ICONS
-import previous from '../assets/chevron-left.svg';
-import next from '../assets/chevron-right.svg';
+import previous from '../../assets/chevron-left.svg';
+import next from '../../assets/chevron-right.svg';
 
 // COMPONENTS
 
@@ -29,17 +32,17 @@ const Header = ({ handleCurrentDate, currentDate }) => {
   };
 
   return (
-    <div className='header row flex-middle'>
-      <div className='column col-start'>
-        <div className='icon' onClick={prevMonth}>
+    <div className={`${styles.header} ${styles.row}`}>
+      <div>
+        <div onClick={prevMonth}>
           <img src={previous} alt="Previous Month" />
         </div>
       </div>
-      <div className='column col-center'>
+      <div>
         <span>{displayMonth}</span>
       </div>
-      <div className='column col-end'>
-        <div className='icon' onClick={nextMonth}>
+      <div>
+        <div onClick={nextMonth}>
           <img src={next} alt="Previous Month" />
         </div>
       </div>

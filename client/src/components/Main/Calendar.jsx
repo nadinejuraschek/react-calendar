@@ -1,8 +1,8 @@
 // REACT
 import React, { useState } from 'react';
 
-// NPM PACKAGES
-import moment from 'moment';
+// STYLES
+import styles from './calendar.module.css';
 
 // COMPONENTS
 import Cells from './Cells';
@@ -18,7 +18,7 @@ const Calendar = () => {
   // console.log(currentDate);
 
   return (
-    <div className='calendar'>
+    <div className={styles.calendar}>
       <Header currentDate={currentDate} handleCurrentDate={setCurrentDate} />
       <Weekdays currentDate={currentDate} />
       <Cells currentDate={currentDate} handleSelectedDate={setSelectedDate} />
