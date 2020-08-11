@@ -1,6 +1,9 @@
 // REACT
 import React, { useState } from 'react';
 
+// NPM PACKAGES
+import moment from 'moment';
+
 // STYLES
 import styles from './calendar.module.css';
 
@@ -17,11 +20,18 @@ const Calendar = () => {
   // TEST
   // console.log(currentDate);
 
+  const handleDateClick = async (day) => {
+    await setSelectedDate(day);
+  };
+
+  // TEST
+  console.log(selectedDate);
+
   return (
     <div className={styles.calendar}>
       <Header currentDate={currentDate} handleCurrentDate={setCurrentDate} />
       <Weekdays currentDate={currentDate} />
-      <Cells currentDate={currentDate} handleSelectedDate={setSelectedDate} />
+      <Cells currentDate={currentDate} selectedDate={selectedDate} handleDateClick={handleDateClick} />
     </div>
   );
 };

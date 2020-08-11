@@ -10,8 +10,9 @@ import styles from './calendar.module.css';
 // ICONS
 
 // COMPONENTS
+import Cell from './Cell';
 
-const Cells = ({ currentDate, handleSelectedDate }) => {
+const Cells = ({ currentDate, selectedDate, handleDateClick }) => {
   const dateFormat = 'D';
 
   const monthStart = moment(currentDate).startOf('month');
@@ -25,26 +26,19 @@ const Cells = ({ currentDate, handleSelectedDate }) => {
   let day = startDate;
   let formattedDate = '';
 
-  const onDateClick = day => {
-    handleSelectedDate(day);
-  };
-
   while (day <= endDate) {
     for (let i = 0; i < 7; i++) {
     formattedDate = moment(day).format(dateFormat);
-    const cloneDay = day;
     days.push(
-       <div
-        className={`${styles.column} ${styles.cell} ${!moment(day).isSame(monthStart, 'month')
-        ? `${styles.disabled}` : moment(day).isSame(day, 'month')
-        ? `${styles.selected}` : "" }`}
+      <Cell
+        day={day}
+        formattedDate={formattedDate}
+        monthStart={monthStart}
+        selectedDate={selectedDate}
         key={day}
-        onClick={() => onDateClick(moment(cloneDay))}
-        >
-        <span className={styles.number}>{formattedDate}</span>
-        <span className={styles.bg}>{formattedDate}</span>
-      </div>
-      );
+        handleDateClick={handleDateClick}
+      />
+    );
     day = moment(day).add(1, 'day');
    }
     rows.push(

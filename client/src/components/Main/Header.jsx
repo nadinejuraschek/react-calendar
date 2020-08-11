@@ -12,10 +12,10 @@ import previous from '../../assets/chevron-left.svg';
 import next from '../../assets/chevron-right.svg';
 
 // COMPONENTS
-
+import NewEventBtn from '../Events/NewEventBtn';
 
 const Header = ({ handleCurrentDate, currentDate }) => {
-  const monthFormat = "MMMM YYYY";
+  const monthFormat = 'MMMM YYYY';
   const displayMonth = moment(currentDate).format(monthFormat);
 
   // TEST
@@ -33,19 +33,18 @@ const Header = ({ handleCurrentDate, currentDate }) => {
 
   return (
     <div className={`${styles.header} ${styles.row}`}>
-      <div>
-        <div onClick={prevMonth}>
-          <img src={previous} alt="Previous Month" />
+      <div className={styles.monthDetails}>
+        <div className={styles.month}>
+          <span>{displayMonth}</span>
+        </div>
+        <div className={styles.icon} onClick={prevMonth}>
+          <img src={previous} alt='Previous Month' />
+        </div>
+        <div className={styles.icon} onClick={nextMonth}>
+          <img src={next} alt='Previous Month' />
         </div>
       </div>
-      <div>
-        <span>{displayMonth}</span>
-      </div>
-      <div>
-        <div onClick={nextMonth}>
-          <img src={next} alt="Previous Month" />
-        </div>
-      </div>
+      <NewEventBtn />
     </div>
   );
 };
