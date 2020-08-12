@@ -14,7 +14,7 @@ import up from '../../../assets/chevron-up.svg';
 // COMPONENTS
 import DatePicker from '../../DatePicker/DatePicker';
 
-const SelectDate = ({ date, handleSelectDate }) => {
+const SelectDate = ({ label, date, handleSelectDate }) => {
     const [openDateSelect, setOpenDateSelect] = useState(false);
 
     const toggleDateSelect = () => {
@@ -24,7 +24,7 @@ const SelectDate = ({ date, handleSelectDate }) => {
     return (
       <div className={styles.inputField}>
         <label className={styles.label} htmlFor='color'>
-          Select Date:
+          {label}
         </label>
         <div className={`${styles.selectDate} ${openDateSelect ? styles.active : ''}`}>
           <div className={styles.firstSelect}>

@@ -20,7 +20,7 @@
 
 /* NEW EVENT MODAL */
 .modalBg {
-  background-color: #00000050;
+  background-color: #00000075;
 
   height: 100vh;
   width: 100vw;
@@ -44,7 +44,7 @@
   height: 500px;
   width: 500px;
 
-  margin: auto;
+  margin: 5% auto;
 }
 
 .modalHeader {
