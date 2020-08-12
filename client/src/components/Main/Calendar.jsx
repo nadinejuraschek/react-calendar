@@ -1,9 +1,6 @@
 // REACT
 import React, { useState } from 'react';
 
-// NPM PACKAGES
-// import moment from 'moment';
-
 // STYLES
 import styles from './calendar.module.css';
 

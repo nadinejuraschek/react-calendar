@@ -30,11 +30,14 @@
   border-bottom: 2px solid rgba(109, 192, 236, 1);
 }
 
-.selectColor {
+.selectColor, .selectDate {
   border-bottom: 1px solid lightgray;
-
   min-height: 40px;
   width: 100%;
+}
+
+.selectDate {
+  position: relative;
 }
 
 .active {

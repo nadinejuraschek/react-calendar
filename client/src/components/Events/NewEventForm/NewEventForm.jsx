@@ -9,10 +9,12 @@ import styles from './form.module.css';
 // COMPONENTS
 import Input from './Input';
 import SelectColor from './SelectColor';
+import SelectDate from './SelectDate';
 
 const NewEventForm = () => {
   const [ name, setName ] = useState('New Event');
   const [ color, setColor ] = useState('lightgray');
+  const [ date, setDate ] = useState(new Date());
 
   return (
     <form className={styles.eventForm}>
@@ -20,6 +22,10 @@ const NewEventForm = () => {
         name='name'
         type='text'
         handleChange={setName}
+      />
+      <SelectDate
+        date={date}
+        handleSelectDate={setDate}
       />
       <SelectColor
         color={color}
