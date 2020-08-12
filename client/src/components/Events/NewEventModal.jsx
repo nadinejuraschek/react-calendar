@@ -8,7 +8,7 @@ import styles from './events.module.css';
 import close from '../../assets/close.svg';
 
 // COMPONENTS
-import NewEventForm from './NewEventForm';
+import NewEventForm from './NewEventForm/NewEventForm';
 
 const Modal = ({ openModal, handleClose }) => {
   return (
