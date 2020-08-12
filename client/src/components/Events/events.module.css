@@ -1,3 +1,4 @@
+/* NEW EVENT BUTTON */
 .roundBtn {
     background-color: #ffffff;
     border: none;
@@ -15,4 +16,30 @@
 
 .roundBtn:hover {
     transform: translateX(-1.5px) translateY(-1.5px);
+}
+
+/* NEW EVENT MODAL */
+.modalBg {
+    background-color: #00000050;
+}
+
+.modalContainer {
+    background-color: #ffffff;
+    border: none;
+    box-shadow: 2px 2px 4px #00000012;
+
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+
+    height: 500px;
+    width: 500px;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
 }

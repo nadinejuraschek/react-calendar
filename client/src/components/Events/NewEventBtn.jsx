@@ -7,9 +7,9 @@ import styles from './events.module.css';
 // ICONS
 import plus from '../../assets/plus.svg';
 
-const NewEventBtn = () => {
+const NewEventBtn = ({ handleOpenModal }) => {
   return (
-    <div className={styles.roundBtn}>
+    <div className={styles.roundBtn} onClick={() => handleOpenModal(true)}>
       <img src={plus} alt="Create New Event" />
     </div>
   );

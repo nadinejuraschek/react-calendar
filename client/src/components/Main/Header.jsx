@@ -14,7 +14,7 @@ import next from '../../assets/chevron-right.svg';
 // COMPONENTS
 import NewEventBtn from '../Events/NewEventBtn';
 
-const Header = ({ handleCurrentDate, currentDate }) => {
+const Header = ({ handleCurrentDate, currentDate, handleOpenModal }) => {
   const monthFormat = 'MMMM YYYY';
   const displayMonth = moment(currentDate).format(monthFormat);
 
@@ -44,7 +44,9 @@ const Header = ({ handleCurrentDate, currentDate }) => {
           <img src={next} alt='Previous Month' />
         </div>
       </div>
-      <NewEventBtn />
+      <NewEventBtn
+        handleOpenModal={handleOpenModal}
+      />
     </div>
   );
 };
