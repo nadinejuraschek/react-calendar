@@ -51,6 +51,7 @@
 
 .header .month {
   margin: auto 1em;
+  width: 210px;
 }
 
 .header .icon {
