@@ -1,5 +1,5 @@
 // REACT
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 // STYLES
 import styles from './form.module.css';
@@ -11,11 +11,20 @@ import Input from './Input';
 import SelectColor from './SelectColor';
 import SelectDate from './SelectDate';
 
-const NewEventForm = () => {
-  const [ name, setName ] = useState('New Event');
-  const [ color, setColor ] = useState('lightgray');
-  const [ startDate, setStartDate ] = useState(new Date());
-  const [ endDate, setEndDate ] = useState(new Date());
+const NewEventForm = ({ events, handleEventData }) => {
+  const [name, setName] = useState('New Event');
+  const [color, setColor] = useState('lightgray');
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
+
+  useEffect(() => {
+    handleEventData({
+      name: name,
+      color: color,
+      startDate: startDate,
+      endDate: endDate,
+    });
+  }, [name, color, startDate, endDate]);
 
   return (
     <form className={styles.eventForm}>
@@ -27,20 +36,17 @@ const NewEventForm = () => {
       />
       <div className={styles.twoInputFields}>
         <SelectDate
-          label="Start Date:"
+          label='Start Date:'
           date={startDate}
           handleSelectDate={setStartDate}
         />
         <SelectDate
-          label="End Date:"
+          label='End Date:'
           date={endDate}
           handleSelectDate={setEndDate}
         />
       </div>
-      <SelectColor
-        color={color}
-        handleSelectColor={setColor}
-      />
+      <SelectColor color={color} handleSelectColor={setColor} />
     </form>
   );
 };

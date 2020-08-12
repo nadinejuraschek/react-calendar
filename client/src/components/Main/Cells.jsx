@@ -12,7 +12,7 @@ import styles from './calendar.module.css';
 // COMPONENTS
 import Cell from './Cell';
 
-const Cells = ({ currentDate, selectedDate, handleDateClick }) => {
+const Cells = ({ currentDate, selectedDate, handleDateClick, events }) => {
   const dateFormat = 'D';
 
   const monthStart = moment(currentDate).startOf('month');

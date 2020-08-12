@@ -1,5 +1,5 @@
 // REACT
-import React from 'react';
+import React, { useState } from 'react';
 
 // STYLES
 import styles from './events.module.css';
@@ -10,7 +10,19 @@ import close from '../../assets/close.svg';
 // COMPONENTS
 import NewEventForm from './NewEventForm/NewEventForm';
 
-const Modal = ({ openModal, handleClose }) => {
+const Modal = ({ openModal, handleClose, events }) => {
+  const [ eventData, setEventData ] = useState({});
+
+  const handleEventData = async (data) => {
+    await setEventData(data);
+  };
+
+  const saveEventData = () => {
+    events.push(eventData);
+    // TEST
+    // console.log(eventData);
+  };
+
   return (
     <div className={`${styles.modalBg} ${openModal ? styles.show : styles.hide}`}>
       <div className={styles.modalContainer}>
@@ -23,10 +35,13 @@ const Modal = ({ openModal, handleClose }) => {
           </div>
         </div>
         <div className={styles.modalBody}>
-          <NewEventForm />
+          <NewEventForm events={events} handleEventData={handleEventData} />
         </div>
         <div className={styles.modalFooter}>
-          <button className={styles.submitBtn}>
+          <button
+            className={styles.submitBtn}
+            onClick={() => saveEventData(eventData)}
+          >
             Save
           </button>
         </div>

@@ -15,6 +15,7 @@ const Calendar = () => {
   // set selectedDate === currentDate, so that currentDate is highlighted when calendar is first rendered
   const [ selectedDate, setSelectedDate ] = useState(new Date());
   const [ openModal, setOpenModal ] = useState(false);
+  const events = [];
 
   // TEST
   // console.log(currentDate);
@@ -45,11 +46,13 @@ const Calendar = () => {
         currentDate={currentDate}
         selectedDate={selectedDate}
         handleDateClick={handleDateClick}
+        events={events}
       />
     </div>
     <NewEventModal
       openModal={openModal}
       handleClose={handleClose}
+      events={events}
     />
     </>
   );
