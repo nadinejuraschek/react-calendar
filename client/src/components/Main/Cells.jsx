@@ -26,28 +26,52 @@ const Cells = ({ currentDate, selectedDate, handleDateClick, events }) => {
   let day = startDate;
   let formattedDate = '';
 
-  while (day <= endDate) {
-    for (let i = 0; i < 7; i++) {
-    formattedDate = moment(day).format(dateFormat);
-    days.push(
-      <Cell
-        day={day}
-        formattedDate={formattedDate}
-        monthStart={monthStart}
-        selectedDate={selectedDate}
-        key={day}
-        handleDateClick={handleDateClick}
-      />
-    );
-    day = moment(day).add(1, 'day');
-   }
-    rows.push(
-       <div className={styles.row} key={day}> {days} </div>
-     );
-    days = [];
-  }
+  let caldays = [];
 
-  return <div className={styles.body}>{rows}</div>
+  // while (day <= endDate) {
+  //   for (let i = 0; i < 7; i++) {
+  //   formattedDate = moment(day).format(dateFormat);
+  //   days.push(
+  //     <Cell
+  //       day={day}
+  //       formattedDate={formattedDate}
+  //       monthStart={monthStart}
+  //       selectedDate={selectedDate}
+  //       key={day}
+  //       handleDateClick={handleDateClick}
+  //     />
+  //   );
+  //   day = moment(day).add(1, 'day');
+  //  }
+  //   rows.push(
+  //      <div className={styles.row} key={day}> {days} </div>
+  //    );
+  //   days = [];
+  // }
+
+  // return <div className={styles.body}>{rows}</div>;
+
+  while (day <= endDate) {
+      for (let i = 0; i < 42; i++) {
+      formattedDate = moment(day).format(dateFormat);
+      caldays.push(
+        <Cell
+          day={day}
+          formattedDate={formattedDate}
+          monthStart={monthStart}
+          selectedDate={selectedDate}
+          key={day}
+          handleDateClick={handleDateClick}
+        />
+      );
+      day = moment(day).add(1, 'day');
+     }
+      // rows.push(
+      //    <div className={styles.row} key={day}> {days} </div>
+      //  );
+      // days = [];
+    }
+    return <div className={styles.grid}>{ caldays } </div>
 };
 
 export default Cells;

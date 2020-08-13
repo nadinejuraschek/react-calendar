@@ -13,12 +13,19 @@ const Cell = ({ day, selectedDate, formattedDate, monthStart, handleDateClick })
 
   return (
     <div
-      className={`${styles.column} ${styles.cell} ${!moment(day).isSame(monthStart, 'month')
+      className={`${styles.gridcell} ${!moment(day).isSame(monthStart, 'month')
       ? `${styles.disabled}` : moment(day).isSame(day, 'month')
       ? `${styles.enabled}` : '' } ${clickedDate === checkDate
       ? `${styles.selected}` : ''}`}
       onClick={() => handleDateClick(day._d)}
     >
+    {/* <div
+      className={`${styles.column} ${styles.cell} ${!moment(day).isSame(monthStart, 'month')
+      ? `${styles.disabled}` : moment(day).isSame(day, 'month')
+      ? `${styles.enabled}` : '' } ${clickedDate === checkDate
+      ? `${styles.selected}` : ''}`}
+      onClick={() => handleDateClick(day._d)}
+    > */}
       <span className={styles.number}>{formattedDate}</span>
       <span className={styles.bg}>{formattedDate}</span>
     </div>
